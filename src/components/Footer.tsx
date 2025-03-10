@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex space-x-6 mb-6">
             <a
-              href="https://github.com"
+              href="https://github.com/hallectj"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-300"
@@ -20,7 +20,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com/hallectj"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-300"
@@ -31,7 +31,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/travis-halleck-02aa398a/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-300"
@@ -47,12 +47,12 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Travis Halleck. All rights reserved.
             </p>
-            <Link
+            {/* <Link
               href="#"
               className="text-gray-400 hover:text-gray-300 text-sm mt-2 inline-block"
             >
               Privacy Policy
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
