@@ -45,7 +45,7 @@ const Footer = () => {
           {/* Copyright and Privacy Policy */}
           <div className="mt-4 text-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} John Doe. All rights reserved.
+              © {new Date().getFullYear()} Travis Halleck. All rights reserved.
             </p>
             <Link
               href="#"

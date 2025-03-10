@@ -20,12 +20,12 @@ const Navbar = () => {
                   <div className="relative w-10 h-10 rounded-full overflow-hidden">
                     <Image
                       src="/placeholder.svg"
-                      alt="John Doe"
+                      alt="Travis Halleck"
                       fill
                       className="object-cover"
                     />
                   </div>
-                  <span className="text-xl font-semibold text-white" style={{ fontFamily: '"Space Mono", monospace' }}>John Doe</span>
+                  <span className="text-xl font-semibold text-white" style={{ fontFamily: '"Space Mono", monospace' }}>Travis Halleck</span>
                 </Link>
               </div>
             </div>

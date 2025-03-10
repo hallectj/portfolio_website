@@ -54,7 +54,7 @@ const Projects = () => {
         {/* Web Projects */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {webProjects.map((project, index) => (
-            <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden h-[24rem] flex flex-col">
               <div className="relative h-48">
                 <Image
                   src={project.image}
@@ -63,17 +63,21 @@ const Projects = () => {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <Link
-                  href={project.link}
-                  className="text-blue-400 hover:text-blue-300 font-medium"
-                >
-                  View Project →
-                </Link>
+              <div className="p-6 flex flex-col flex-grow">
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300 mb-4">{project.description}</p>
+                </div>
+                <div className="mt-auto">
+                  <Link
+                    href={project.link}
+                    className="text-blue-400 hover:text-blue-300 font-medium"
+                  >
+                    View Project →
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -86,15 +90,17 @@ const Projects = () => {
         {/* Other Projects */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {otherProjects.map((project, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-300 mb-3">{project.description}</p>
-              <p className="text-sm text-gray-400 mb-4">Technologies: {project.tech}</p>
+            <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg h-[12rem] flex flex-col">
+              <div className="flex-grow">
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 mb-3">{project.description}</p>
+                <p className="text-sm text-gray-400">{`Technologies: ${project.tech}`}</p>
+              </div>
               <Link
                 href={project.link}
-                className="text-blue-400 hover:text-blue-300 font-medium"
+                className="text-blue-400 hover:text-blue-300 font-medium mt-auto"
               >
                 View Project →
               </Link>

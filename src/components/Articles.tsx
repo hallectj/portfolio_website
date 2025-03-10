@@ -1,30 +1,26 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+import { articles } from '@/data/articles';
 
 const Articles = () => {
-  const articles = [
-    {
-      title: 'Understanding Modern Web Development',
-      excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: '/placeholder.svg',
-      date: '2024-01-15',
-      slug: 'understanding-modern-web-development'
-    },
-    {
-      title: 'The Future of JavaScript Frameworks',
-      excerpt: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      image: '/placeholder.svg',
-      date: '2024-01-10',
-      slug: 'future-of-javascript-frameworks'
-    },
-    {
-      title: 'Building Scalable Applications',
-      excerpt: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-      image: '/placeholder.svg',
-      date: '2024-01-05',
-      slug: 'building-scalable-applications'
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const articlesPerPage = 3;
+  const totalPages = Math.ceil(articles.length / articlesPerPage);
+
+  const getCurrentArticles = () => {
+    const startIndex = (currentPage - 1) * articlesPerPage;
+    return articles.slice(startIndex, startIndex + articlesPerPage);
+  };
+
+  const handlePageChange = (pageNumber: number) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
     }
-  ];
+  };
 
   return (
     <section className="py-16 bg-gray-900">
@@ -33,9 +29,9 @@ const Articles = () => {
           Latest Articles
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {articles.map((article, index) => (
-            <article key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 transition-all duration-300 ease-in-out">
+          {getCurrentArticles().map((article, index) => (
+            <article key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden h-[32rem] flex flex-col">
               <div className="relative h-48">
                 <Image
                   src={article.image}
@@ -44,15 +40,15 @@ const Articles = () => {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 <time className="text-sm text-gray-400">{article.date}</time>
                 <h3 className="text-xl font-semibold text-white mt-2 mb-3">
                   {article.title}
                 </h3>
-                <p className="text-gray-300 mb-4">{article.excerpt}</p>
+                <p className="text-gray-300 mb-4 flex-grow">{article.excerpt}</p>
                 <Link
                   href={`/articles/${article.slug}`}
-                  className="text-blue-400 hover:text-blue-300 font-medium"
+                  className="text-blue-400 hover:text-blue-300 font-medium mt-auto"
                 >
                   Read More →
                 </Link>
@@ -61,21 +57,28 @@ const Articles = () => {
           ))}
         </div>
 
-        {/* Pagination */}
         <div className="flex justify-center space-x-2 mt-8">
-          <button className="px-4 py-2 border border-gray-700 text-sm font-medium rounded-md text-gray-300 bg-gray-800 hover:bg-gray-700">
+          <button 
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 border text-sm font-medium rounded-md ${currentPage === 1 ? 'border-gray-600 text-gray-500 cursor-not-allowed' : 'border-gray-700 text-gray-300 bg-gray-800 hover:bg-gray-700'}`}
+          >
             Previous
           </button>
-          <button className="px-4 py-2 border border-gray-700 text-sm font-medium rounded-md text-gray-300 bg-gray-800 hover:bg-gray-700">
-            1
-          </button>
-          <button className="px-4 py-2 border border-blue-500 text-sm font-medium rounded-md text-white bg-blue-600">
-            2
-          </button>
-          <button className="px-4 py-2 border border-gray-700 text-sm font-medium rounded-md text-gray-300 bg-gray-800 hover:bg-gray-700">
-            3
-          </button>
-          <button className="px-4 py-2 border border-gray-700 text-sm font-medium rounded-md text-gray-300 bg-gray-800 hover:bg-gray-700">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+            <button
+              key={pageNumber}
+              onClick={() => handlePageChange(pageNumber)}
+              className={`px-4 py-2 border text-sm font-medium rounded-md ${pageNumber === currentPage ? 'border-blue-500 text-white bg-blue-600' : 'border-gray-700 text-gray-300 bg-gray-800 hover:bg-gray-700'}`}
+            >
+              {pageNumber}
+            </button>
+          ))}
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className={`px-4 py-2 border text-sm font-medium rounded-md ${currentPage === totalPages ? 'border-gray-600 text-gray-500 cursor-not-allowed' : 'border-gray-700 text-gray-300 bg-gray-800 hover:bg-gray-700'}`}
+          >
             Next
           </button>
         </div>

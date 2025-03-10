@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 const rubik = Rubik({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'John Doe - Web Developer',
-  description: 'Personal portfolio and blog of John Doe, a web developer specializing in modern web technologies.',
+  title: 'Travis Halleck - Web Developer',
+  description: 'Personal portfolio and blog of Travis Halleck, a web developer specializing in modern web technologies.',
 };
 
 export default function RootLayout({
