@@ -19,7 +19,7 @@ const Navbar = () => {
                 <Link href="/" className="flex items-center space-x-3">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden">
                     <Image
-                      src="/placeholder.svg"
+                      src="/travis_pic.jpg"
                       alt="Travis Halleck"
                       fill
                       className="object-cover"
@@ -48,13 +48,13 @@ const Navbar = () => {
                   Articles
                 </Link>
                 <Link
-                  href="https://external-tools-site.com"
+                  href="https://www.seoharmonytool.com/"
                   className="text-gray-300 hover:text-white px-3 py-2 text-base font-bold tracking-wider"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ fontFamily: '"Space Mono", monospace' }}
                 >
-                  Free Tools
+                  Free Tool
                 </Link>
                 <Link
                   href="/about"

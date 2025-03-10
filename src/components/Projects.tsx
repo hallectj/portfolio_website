@@ -4,22 +4,22 @@ import Link from 'next/link';
 const Projects = () => {
   const webProjects = [
     {
-      title: 'Web Project 1',
-      description: 'A full-stack web application built with React and Node.js',
-      image: '/placeholder.svg',
-      link: '#'
+      title: 'Back Then Now',
+      description: 'A full-stack web application built with PostgreSQL, ExpressJS, Angular, NodeJS',
+      image: '/backthennow.png',
+      link: 'https://backthennow.com'
     },
     {
-      title: 'Web Project 2',
-      description: 'An e-commerce platform using Next.js and Stripe',
-      image: '/placeholder.svg',
-      link: '#'
+      title: 'SEO Keyword Density Tool',
+      description: 'A tool that analyzes the keyword density and other SEO metrics of a webpage',
+      image: '/seoharmonytool.png',
+      link: 'https://www.seoharmonytool.com/'
     },
     {
-      title: 'Web Project 3',
-      description: 'A real-time chat application with WebSocket',
-      image: '/placeholder.svg',
-      link: '#'
+      title: 'MERN Blog',
+      description: 'A blog application built React, Redux, MongoDb, NodeJS and ExpressJS',
+      image: '/mernblog_screenshot.png',
+      link: 'https://mern-blog-wwll.onrender.com/'
     }
   ];
 
@@ -28,7 +28,7 @@ const Projects = () => {
       title: 'Music Player',
       description: 'A Java Swing-based music player application',
       tech: 'Java, Swing',
-      link: '#'
+      link: 'https://github.com/hallectj/Simple-Java-MP3-Music-Player'
     },
     {
       title: 'Curb Your Addiction Blocker',
@@ -40,7 +40,7 @@ const Projects = () => {
       title: 'Etch-a-Sketch',
       description: 'A browser-based drawing application',
       tech: 'HTML, CSS, JavaScript',
-      link: '#'
+      link: 'https://github.com/hallectj/Sketchpad-Program'
     }
   ];
 
@@ -60,7 +60,7 @@ const Projects = () => {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
@@ -74,6 +74,8 @@ const Projects = () => {
                   <Link
                     href={project.link}
                     className="text-blue-400 hover:text-blue-300 font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     View Project →
                   </Link>
@@ -101,6 +103,8 @@ const Projects = () => {
               <Link
                 href={project.link}
                 className="text-blue-400 hover:text-blue-300 font-medium mt-auto"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 View Project →
               </Link>

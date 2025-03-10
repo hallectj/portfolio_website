@@ -14,50 +14,50 @@ const Hero = () => {
           
           {/* Tech Stack Logos */}
           <div className="flex justify-center items-center space-x-8">
-            <div className="relative w-16 h-16">
+            <div className="relative bg-white w-16 h-16">
               <Image
-                src="/placeholder.svg"
-                alt="Node.js"
+                src="typescript_icon.svg"
+                alt="TypeScript"
                 fill
                 className="object-contain"
               />
             </div>
-            <div className="relative w-16 h-16">
+            <div className="relative bg-white w-16 h-16">
               <Image
-                src="/placeholder.svg"
+                src="angular_icon.svg"
                 alt="Angular"
                 fill
                 className="object-contain"
               />
             </div>
-            <div className="relative w-16 h-16">
+            <div className="relative bg-white w-16 h-16">
               <Image
-                src="/placeholder.svg"
+                src="react_icon.svg"
                 alt="React"
                 fill
                 className="object-contain"
               />
             </div>
-            <div className="relative w-16 h-16">
+            <div className="relative bg-white w-16 h-16">
               <Image
-                src="/placeholder.svg"
+                src="javascript_icon.svg"
                 alt="JavaScript"
                 fill
                 className="object-contain"
               />
             </div>
-            <div className="relative w-16 h-16">
+            <div className="relative bg-white w-16 h-16">
               <Image
-                src="/placeholder.svg"
-                alt="HTML5"
+                src="nodejs_icon.svg"
+                alt="Node.js"
                 fill
                 className="object-contain"
               />
             </div>
-            <div className="relative w-16 h-16">
+            <div className="relative bg-white w-16 h-16">
               <Image
-                src="/placeholder.svg"
-                alt="CSS3"
+                src="postgresql_icon.svg"
+                alt="PostgreSQL"
                 fill
                 className="object-contain"
               />
